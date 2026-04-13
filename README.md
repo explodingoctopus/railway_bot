@@ -49,11 +49,14 @@ web: python bot.py
 ```
 ## Автоматический деплой
 
-Добавлен GitHub Actions workflow `.github/workflows/deploy.yml`, который может деплоить проект в Railway при пуше в `main`.
+Добавлен GitHub Actions workflow `.github/workflows/deploy.yml`, который уведомляет, что код готов к деплою.
 
-Для работы workflow нужно создать секрет GitHub `RAILWAY_API_KEY` и установить туда ключ Railway API.
-
-После этого каждое обновление в ветке `main` будет автоматически пытаться задеплоить проект.
+Для деплоя в Railway:
+1. Создай проект в Railway
+2. Выбери `Deploy from GitHub`
+3. Найди репозиторий `explodingoctopus/railway_bot`
+4. Добавь переменные окружения
+5. Разверни проект
 > Этот проект теперь запускает HTTP-статус на корневом пути `/`, чтобы Railway видел живой веб-процесс. Если ты добавишь Railway PostgreSQL, сервис будет подключаться к ней через `DATABASE_URL`.
 
 ## Команды бота

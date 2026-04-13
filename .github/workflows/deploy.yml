@@ -11,12 +11,4 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: npm install -g @railway/cli
-      - run: |
-          railway login --apiKey "$RAILWAY_API_KEY"
-          railway up --yes
-        env:
-          RAILWAY_API_KEY: ${{ secrets.RAILWAY_API_KEY }}
+      - run: echo "Code is ready for deployment. Please deploy manually in Railway."
