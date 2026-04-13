@@ -47,7 +47,13 @@ bash start_bot.sh
 ```text
 web: python bot.py
 ```
+## Автоматический деплой
 
+Добавлен GitHub Actions workflow `.github/workflows/deploy.yml`, который может деплоить проект в Railway при пуше в `main`.
+
+Для работы workflow нужно создать секрет GitHub `RAILWAY_API_KEY` и установить туда ключ Railway API.
+
+После этого каждое обновление в ветке `main` будет автоматически пытаться задеплоить проект.
 > Этот проект теперь запускает HTTP-статус на корневом пути `/`, чтобы Railway видел живой веб-процесс. Если ты добавишь Railway PostgreSQL, сервис будет подключаться к ней через `DATABASE_URL`.
 
 ## Команды бота
