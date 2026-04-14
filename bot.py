@@ -203,17 +203,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     
     text = (
         f"👋 Привет, {name}!\n\n"
-        f"Добро пожаловать в <b>Arlan Trading</b> 📈\n\n"
+        f"Добро пожаловать в Arlan Trading 📈\n\n"
         f"Здесь я публикую:\n"
         f"• Торговые сигналы по Forex\n"
         f"• Анализ рынка и новости\n"
         f"• Обучающие материалы\n\n"
-        f"🔥 Хочешь эксклюзивные сигналы с высокой точностью?\n\n"
-        f"💎 <b>VIP группа</b> — напиши нашему менеджеру и получи доступ к закрытым сигналам с точностью до 85%:\n"
-        f"👉 <a href=\"https://t.me/arlan_trade?text=СИГНАЛЫ\">Написать менеджеру</a>\n\n"
-        f"📢 <b>Основной канал</b> — следи за бесплатными сигналами и аналитикой рынка:\n"
-        f"👉 <a href=\"https://t.me/arlan_traiding\">Перейти в канал</a>\n\n"
-        f"Нажми на кнопки ниже 👇"
+        f"🔥 Хочешь эксклюзивные сигналы с высокой точностью?\n"
+        f"Вступай в VIP группу 👇"
     )
     
     buttons = []
@@ -223,7 +219,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         buttons.append([InlineKeyboardButton("📢 Основной канал", url=CHANNEL_LINK)])
 
     keyboard = InlineKeyboardMarkup(buttons) if buttons else None
-    await update.message.reply_text(text, parse_mode="HTML", reply_markup=keyboard)
+    await update.message.reply_text(text, reply_markup=keyboard)
 
 async def broadcast(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Только для админа (твой ID)
